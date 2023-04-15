@@ -1,0 +1,10 @@
+{
+    "manifest_version": 2,
+    "name": "Aggieland Accessors",
+    "description": "This extension creates a Chrome extension for our project. Our project name is Aggieland Accessors!",
+    "version": "1.1",
+    "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "window.html"
+    }
+    }
