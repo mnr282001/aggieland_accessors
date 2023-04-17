@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="background.js"></script>
+    <meta charset="UTF-8">
+    <title>Aggieland Accessors</title>
+    <meta name="description" content="We are a Chrome extension that helps you navigate Texas A&amp;M University.">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
       body {
-        background-color: #f2f2f2;
-        font-family: Arial, sans-serif;
-        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        padding: 20px;
+        background-color: #f0f8ff;
       }
-      .divPotato {
-        margin-top: 20px;
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #3C0000;
+        margin: 0;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         height: 400px;
         width: 400px;
         font-size: 24px;
         font-weight: bold;
         color: #f5f2f2;
-        background-color: #3C0000;
+        background: linear-gradient(45deg, #007bff, #00e5ff);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin-bottom: 30px;
       }
       button {
         padding: 10px 20px;
         font-size: 18px;
         font-weight: bold;
         color: #fff;
-        background-color: #007bff;
+        background-color: #3C0000;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+      }
+      button:hover {
+        background-color: #007bff;
+      }
+      footer {
+        text-align: center;
+        color: #3C0000;
+        margin-top: 50px;
       }
     </style>
   </head>
   <body>
-    <!-- <div>Howdy! We are Aggieland Accessors</div>
-    <div>This is a Chrome Extension!</div>
-    <div>And this is some html</div> -->  
-    <div class="divPotato">
-      <div>Howdy! We are Aggieland Accessors</div>
-      <div>This is a Chrome Extension!</div>
-      <div>And this is some html</div>
+    <header>
+      <h1>Aggieland Accessors</h1>
+    </header>
+    <section>
+      <p>We are a Chrome extension that helps you navigate Texas A&amp;M University.</p>
       <button type="button">Click Me! (I don't do anything right now.)</button>
-    </div>
-    
+    </section>
+    <footer>
+      <p>Contact us at contact@aggielandaccessors.com</p>
+    </footer>
   </body>
 </html>
