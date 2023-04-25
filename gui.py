@@ -1,19 +1,23 @@
 from tkinter import *
-import os
+from os import system
 
 
 
 root = Tk()
 root.title(" Aggieland Accessors ")
-root.geometry("600x400")
 
-btn = Button(root, text='Close me!', bd='5', command=root.destroy)
+root.title("Frame Example")
+root.geometry("600x350")
+
 
 def run():
-    os.system('python3 background.py')
+    system('python3 background.py')
 
-btn2 = Button(root, text="Click Me",command=run)
-btn.pack(pady=15)
-btn2.pack(pady=15)
+btn_for_run = Button(root, text="Click Me",command=run)
+
+btn_to_close = Button(root, text='Close me!', bd='5', command=root.destroy)
+btn_for_run.pack(pady=15)
+btn_to_close.pack(pady=15)
+
 
 root.mainloop()
