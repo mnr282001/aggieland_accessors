@@ -14,10 +14,10 @@ def getAudio(color_name):
 
     # save the audio file
     tts.save("hello.mp3")
-    
+
     # play the audio file
     playsound("hello.mp3")
-    
+
     # remove the temp mp3 file
     if path.isfile("hello.mp3"):
         remove("hello.mp3")
