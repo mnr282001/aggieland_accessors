@@ -2,8 +2,7 @@ from pynput import keyboard, mouse
 from os import remove, path
 from PIL import ImageGrab
 from scipy.spatial import KDTree
-from webcolors import CSS3_HEX_TO_NAMES
-from webcolors import hex_to_rgb
+from webcolors import CSS3_HEX_TO_NAMES, hex_to_rgb
 import gtts
 from playsound import playsound
 

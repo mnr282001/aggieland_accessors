@@ -5,7 +5,6 @@ from os import system
 root = Tk()
 root.title(" Aggieland Accessors ")
 
-root.title("Frame Example")
 root.geometry("600x350")
 
 
