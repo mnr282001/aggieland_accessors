@@ -13,7 +13,7 @@ root.geometry("600x350")
 
 
 def run():
-    system('py background.py')
+    system('python3 background.py')
 
 
 btn_for_run = customtkinter.CTkButton(
