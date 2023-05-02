@@ -5,8 +5,9 @@ from scipy.spatial import KDTree
 from webcolors import CSS3_HEX_TO_NAMES, hex_to_rgb
 import gtts
 from playsound import playsound
+from datetime import datetime
 
-
+audio_on = False
 def getAudio(color_name):
     # Make a request to Google Text-to-Speech (gTTS) API to get audio synthesis
     tts = gtts.gTTS(color_name)
@@ -43,13 +44,23 @@ def getHex(rgb):
 
 
 def getColor(x, y):
+    global audio_off
     # Get color of a pixel at (x, y) on the screen
     bbox = (int(x), int(y), int(x)+1, int(y)+1)
     im = ImageGrab.grab(bbox=bbox)
     rgbim = im.convert('RGB')
     r, g, b = rgbim.getpixel((0, 0))
+
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    record = current_time + " " + getHex((r, g, b)) + "\n"
+    f = open("color_log.txt", "a")
+    f.write(record)
+    f.close()
+
     color_name = str(convert_rgb_to_names(tuple([r, g, b])))
-    getAudio(color_name)
+    if audio_on: getAudio(color_name)
     print(color_name)
 
 
@@ -68,7 +79,17 @@ def onRel(key):
 
 if __name__ == '__main__':
     # Start the keyboard and mouse listeners
+    open('color_log.txt', 'w').close()
+
+    f = open("audio_set.txt", "r")
+    aud = f.read(1)
+    f.close()
+
+    if aud == '0': audio_on = False
+    else: audio_on = True
+
     with keyboard.Listener(on_release=onRel) as klstnr:
         with mouse.Listener(on_click=onClick) as mlstnr:
             klstnr.join()
             mlstnr.join()
+
