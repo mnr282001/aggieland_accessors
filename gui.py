@@ -33,7 +33,9 @@ def save_log():
     else:
         print("No available log")
 def run():
+
     global audio_var
+
 
     open('audio_set.txt', 'w').close()
 
